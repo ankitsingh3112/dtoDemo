@@ -1,9 +1,6 @@
 package in.demo.dtodemo.dto;
 
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 
 public class CreateStudentRequestDto {
 
@@ -12,7 +9,7 @@ public class CreateStudentRequestDto {
     private String name;
 
     @NotNull(message = "Age is required")
-    @Size(min=18, message = "Student must be 18 above")
+    @Min(value=18, message = "Student must be 18 above")
     private Integer age;
 
     @Email(message = "email must be valid")
